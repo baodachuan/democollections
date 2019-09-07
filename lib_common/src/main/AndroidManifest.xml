@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bdc.lib_common" />
+    package="com.bdc.lib_common" >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application>
+
+        <activity android:name=".ui.CommonWebViewActivity" />
+    </application>
+</manifest>

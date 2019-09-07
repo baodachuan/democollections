@@ -65,4 +65,5 @@ dependencies {
 
     api project(path: ':lib_common')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
 }
