@@ -1,7 +1,8 @@
 package com.bdc.module_rss.presenter;
 
-import android.arch.lifecycle.LifecycleOwner;
-import android.arch.lifecycle.Observer;
+
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 
 import com.bdc.module_rss.MainViewModel;
 import com.bdc.module_rss.contract.RssMainContract;

@@ -1,9 +1,10 @@
 package com.bdc.lib_common.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class BaseActivity <V extends BaseMvpView, P extends BasePresenter> extends AppCompatActivity {
     private V mView;

@@ -1,8 +1,6 @@
 package com.bdc.lib_common.base;
 
-import android.arch.lifecycle.LifecycleObserver;
-
-public abstract class BasePresenter<V extends BaseMvpView> implements LifecycleObserver {
+public abstract class BasePresenter<V extends BaseMvpView> {
     public V mView;
 
     public V getView() {
