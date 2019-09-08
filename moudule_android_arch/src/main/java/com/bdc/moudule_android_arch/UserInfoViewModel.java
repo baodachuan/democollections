@@ -17,9 +17,6 @@ public class UserInfoViewModel extends ViewModel {
         }
         return data;
     }
-//    public void putUser(User user){
-//        user.setValue(user);
-//    }
 
 
 
