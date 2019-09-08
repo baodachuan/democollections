@@ -14,12 +14,14 @@ android {
         main{
             if(isBuildModule.toBoolean()){
                 manifest.srcFile "src/main/debug/AndroidManifest.xml"
+                androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
             }else {
                 manifest.srcFile "src/main/release/AndroidManifest.xml"
                 java {
                     exclude '**/**/debug/**'
                 }
             }
+
 
         }
     }
@@ -39,7 +41,9 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                arguments = [AROUTER_MODULE_NAME  : project.getName(),
+                             "room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
             }
         }
 
@@ -57,11 +61,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     api project(path: ':lib_common')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    annotationProcessor "androidx.room:room-compiler:2.1.0"
 }
