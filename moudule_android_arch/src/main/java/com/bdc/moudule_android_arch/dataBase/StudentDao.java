@@ -1,4 +1,4 @@
-package com.bdc.moudule_android_arch.DataBase;
+package com.bdc.moudule_android_arch.dataBase;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

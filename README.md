@@ -14,3 +14,6 @@ https://juejin.im/post/5ad425d36fb9a028c06b48f6
 
 Lifecycle+Retrofit+Room
 https://juejin.im/post/5a2f3b956fb9a0450e76142b
+
+![image](https://user-gold-cdn.xitu.io/2018/6/19/1641699fa4a1be55?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+

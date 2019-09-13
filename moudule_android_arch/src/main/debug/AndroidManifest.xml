@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bdc.moudule_android_arch" >
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".App_Arch"
@@ -18,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ArcSubActivity" />
+        <activity android:name=".FragmentContainerActivity" />
 
     </application>
 

@@ -15,8 +15,8 @@ import androidx.room.Room;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bdc.lib_common.Constants;
 import com.bdc.lib_common.data.LiveDataBus;
-import com.bdc.moudule_android_arch.DataBase.StudentDao;
-import com.bdc.moudule_android_arch.DataBase.StudentDataBase;
+import com.bdc.moudule_android_arch.dataBase.StudentDao;
+import com.bdc.moudule_android_arch.dataBase.StudentDataBase;
 import com.bdc.moudule_android_arch.bean.Student;
 
 import java.util.List;
@@ -60,7 +60,8 @@ public class ArchMainActivity extends AppCompatActivity {
     public void change(View view) {
 //        User user=new User("zhanghan ",1);
 //        userInfoViewModel.getUserData().setValue(user);
-        ARouter.getInstance().build(Constants.MODULE_ARCH_SUB).navigation();
+//        ARouter.getInstance().build(Constants.MODULE_ARCH_SUB).navigation();
+        ARouter.getInstance().build(Constants.MODULE_ARCH_FRAGMENT_CONTAINER).navigation();
     }
 
     public void rootest(View view) {
