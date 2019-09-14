@@ -14,13 +14,14 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bdc.lib_common.Constants;
 import com.bdc.moudule_android_arch.R;
+import com.bdc.moudule_android_arch.adapter.ArticleAdapter;
+import com.bdc.moudule_android_arch.adapter.RefreshLoadMoreHelper;
 import com.bdc.moudule_android_arch.bean.ArticleEntity;
 import com.bdc.moudule_android_arch.bean.PageList;
 import com.bdc.moudule_android_arch.bean.Response;
 import com.bdc.moudule_android_arch.net.ApiObserver;
 import com.bdc.moudule_android_arch.repos.ArticlesRepo;
-
-import java.util.List;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 
 /**
@@ -28,11 +29,12 @@ import java.util.List;
  * Function：
  * Desc：
  */
-public class HomeFragment extends Fragment {
-    private static final String ARG_PAGE="arg_page";
+public class HomeFragment extends Fragment implements BaseQuickAdapter.OnItemClickListener, IRefreshPage {
+    private static final String ARG_PAGE = "arg_page";
     private View headerView;
 
     protected View root;
+    private RefreshLoadMoreHelper<ArticleEntity> refreshLoadMoreHelper;
 
     protected int getContentView() {
         return R.layout.arch_fragment_home;
@@ -58,31 +60,42 @@ public class HomeFragment extends Fragment {
         SwipeRefreshLayout refreshLayout = root.findViewById(R.id.refresh_layout);
         RecyclerView recyclerView = root.findViewById(R.id.recycler_home);
 
-        loadData();
+        refreshLoadMoreHelper = new RefreshLoadMoreHelper<>(this, refreshLayout, recyclerView, ArticleAdapter.class);
+        refreshLoadMoreHelper.setOnItemClickListener(this);
+        refreshLoadMoreHelper.autoRefresh();
+//        loadData();
 
     }
 
 
-
+    @Override
     public void loadData() {
-
-        ArticlesRepo.getIndexArticles(1).observe(this, new ApiObserver<PageList<ArticleEntity>>() {
+        ArticlesRepo.getIndexArticles(refreshLoadMoreHelper.getCurrPage()).observe(this, new ApiObserver<PageList<ArticleEntity>>() {
             @Override
             public void onSuccess(Response<PageList<ArticleEntity>> response) {
-                PageList<ArticleEntity> data = response.getData();
-                List<ArticleEntity> data1 = data.getData();
-                Log.i(Constants.TAG,"data1 is "+data1);
+                refreshLoadMoreHelper.loadSuccess(response);
+            }
 
+            @Override
+            public void onFailure(int code, String msg) {
+                super.onFailure(code, msg);
+                refreshLoadMoreHelper.loadError();
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                super.onError(throwable);
+                refreshLoadMoreHelper.loadError();
             }
         });
 
 
-
-
-
     }
 
 
-
-
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        ArticleEntity item = refreshLoadMoreHelper.getItem(position);
+        Log.i(Constants.TAG, "item is " + item);
+    }
 }

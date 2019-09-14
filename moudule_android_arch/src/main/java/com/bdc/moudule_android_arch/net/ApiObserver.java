@@ -2,6 +2,7 @@ package com.bdc.moudule_android_arch.net;
 
 import android.util.Log;
 
+import com.bdc.lib_common.base.BaseObserver;
 import com.bdc.moudule_android_arch.bean.Response;
 
 

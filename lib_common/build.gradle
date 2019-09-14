@@ -73,7 +73,7 @@ dependencies {
     api 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
 
     api 'com.github.leonardoxh:retrofit2-livedata-adapter:1.1.2'
-//    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47-androidx'
 
 
 

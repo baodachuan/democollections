@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="arch_spacing_smaller">4dp</dimen>
+    <dimen name="arch_spacing">8dp</dimen>
+
+    <dimen name="arch_text_10">10sp</dimen>
+    <dimen name="arch_text_12">12sp</dimen>
+    <dimen name="arch_text_14">14sp</dimen>
+    <dimen name="arch_text_16">16sp</dimen>
+    <dimen name="arch_spacing_bigger">16dp</dimen>
+</resources>

@@ -18,10 +18,10 @@ public class FragmentContainerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.arch_fragment_container);
 
-        FragmentManager manager=getSupportFragmentManager();
-        HomeFragment homeFragment=new HomeFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        HomeFragment homeFragment = new HomeFragment();
         FragmentTransaction ft = manager.beginTransaction();
-        ft.replace(R.id.fagment_container,homeFragment);
+        ft.replace(R.id.fagment_container, homeFragment);
         ft.commit();
 
 
