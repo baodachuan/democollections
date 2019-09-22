@@ -18,7 +18,7 @@ import com.bdc.moudule_android_arch.adapter.ArticleAdapter;
 import com.bdc.moudule_android_arch.adapter.RefreshLoadMoreHelper;
 import com.bdc.moudule_android_arch.bean.ArticleEntity;
 import com.bdc.moudule_android_arch.bean.PageList;
-import com.bdc.moudule_android_arch.bean.Response;
+import com.bdc.lib_common.data.Response;
 import com.bdc.moudule_android_arch.net.ApiObserver;
 import com.bdc.moudule_android_arch.repos.ArticlesRepo;
 import com.chad.library.adapter.base.BaseQuickAdapter;

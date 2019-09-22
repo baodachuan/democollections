@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bdc.lib_common.Constants;
+import com.bdc.lib_common.utils.ImageLoader;
 import com.bdc.module_rss.R;
 import com.prof.rssparser.Article;
 
@@ -27,7 +27,6 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     private List<Article> articles;
 
     private Context mContext;
-    private WebView articleView;
 
     public ArticleAdapter(List<Article> list, Context context) {
         this.articles = list;
@@ -67,6 +66,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
 
         viewHolder.title.setText(currentArticle.getTitle());
 
+        ImageLoader.load(mContext,currentArticle.getImage(),viewHolder.image,false,0);
+
 //        Picasso.get()
 //                .load(currentArticle.getImage())
 //                .placeholder(R.drawable.placeholder)
@@ -83,7 +84,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
             }
         }
 
-        viewHolder.category.setText(categories.toString());
+//        viewHolder.category.setText(categories.toString());
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -98,32 +99,6 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
                         .navigation();
 
 
-                //show article content inside a dialog
-//                articleView = new WebView(mContext);
-//
-//                articleView.getSettings().setLoadWithOverviewMode(true);
-//
-//
-//
-//                articleView.getSettings().setJavaScriptEnabled(true);
-//                articleView.setHorizontalScrollBarEnabled(false);
-//                articleView.setWebChromeClient(new WebChromeClient());
-//                articleView.loadDataWithBaseURL(null, "<style>img{display: inline; height: auto; max-width: 100%;} " +
-//
-//                        "</style>\n" + "<style>iframe{ height: auto; width: auto;}" + "</style>\n" + content, null, "utf-8", null);
-//
-//                AlertDialog alertDialog = new AlertDialog.Builder(mContext).create();
-//                alertDialog.setTitle(title);
-//                alertDialog.setView(articleView);
-//                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-//                        new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                dialog.dismiss();
-//                            }
-//                        });
-//                alertDialog.show();
-//
-//                ((TextView) alertDialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
             }
         });
     }
@@ -137,7 +112,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
         TextView title;
         TextView pubDate;
         ImageView image;
-        TextView category;
+//        TextView category;
 
         public ViewHolder(View itemView) {
 
@@ -145,7 +120,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
             title = itemView.findViewById(R.id.title);
             pubDate = itemView.findViewById(R.id.pubDate);
             image = itemView.findViewById(R.id.image);
-            category = itemView.findViewById(R.id.categories);
+//            category = itemView.findViewById(R.id.categories);
         }
     }
 }

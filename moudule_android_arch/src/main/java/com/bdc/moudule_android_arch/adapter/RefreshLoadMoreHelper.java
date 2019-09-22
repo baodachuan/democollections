@@ -8,7 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bdc.moudule_android_arch.R;
 import com.bdc.moudule_android_arch.bean.PageList;
-import com.bdc.moudule_android_arch.bean.Response;
+import com.bdc.lib_common.data.Response;
 import com.bdc.moudule_android_arch.ui.IRefreshPage;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;

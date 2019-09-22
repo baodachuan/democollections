@@ -1,4 +1,4 @@
-package com.bdc.moudule_android_arch.bean;
+package com.bdc.lib_common.data;
 
 /**
  * Created by arvinljw on 2018/10/31 14:58

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData;
 
 import com.bdc.moudule_android_arch.bean.ArticleEntity;
 import com.bdc.moudule_android_arch.bean.PageList;
-import com.bdc.moudule_android_arch.bean.Response;
+import com.bdc.lib_common.data.Response;
 import com.bdc.moudule_android_arch.net.Net;
 import com.github.leonardoxh.livedatacalladapter.Resource;
 

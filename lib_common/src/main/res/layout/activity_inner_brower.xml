@@ -11,6 +11,10 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:id="@+id/progress_bar"
         android:layout_gravity="center" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <WebView
         android:id="@+id/web_view"
         android:layout_width="match_parent"
