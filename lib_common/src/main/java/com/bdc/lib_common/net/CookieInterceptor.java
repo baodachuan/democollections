@@ -1,4 +1,4 @@
-package com.bdc.moudule_android_arch.net;
+package com.bdc.lib_common.net;
 
 import androidx.annotation.NonNull;
 
@@ -13,7 +13,7 @@ import okhttp3.Response;
  * Function：
  * Desc：
  */
-class CookieInterceptor implements Interceptor {
+public class CookieInterceptor implements Interceptor {
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request.Builder builder = chain.request().newBuilder();

@@ -1,4 +1,4 @@
-package com.bdc.moudule_android_arch.net;
+package com.bdc.lib_common.net;
 
 
 import android.util.Log;

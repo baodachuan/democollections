@@ -1,6 +1,9 @@
 package com.bdc.moudule_android_arch.net;
 
 
+import com.bdc.lib_common.net.BaseNet;
+import com.bdc.lib_common.net.CookieInterceptor;
+
 import okhttp3.OkHttpClient;
 
 /**

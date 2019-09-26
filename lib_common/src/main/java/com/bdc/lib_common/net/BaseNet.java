@@ -1,9 +1,9 @@
-package com.bdc.moudule_android_arch.net;
+package com.bdc.lib_common.net;
 
 import android.content.Context;
 
+import com.bdc.lib_common.utils.AppUtils;
 import com.bdc.lib_common.utils.OkHttpsUtil;
-import com.bdc.moudule_android_arch.App_Arch;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader;
 import com.bumptech.glide.load.model.GlideUrl;
@@ -74,7 +74,7 @@ public abstract class BaseNet<T> {
             if (isHttpsRequest()) {
                 buildHttps(clientBuilder);
             }
-            File cacheFile = new File(App_Arch.getApp().getCacheDir().toString(),"cache");
+            File cacheFile = new File(AppUtils.getApplication().getCacheDir().toString(),"cache");
             clientBuilder.cache(new Cache(cacheFile,10*1024*1024));
             httpClient = clientBuilder.proxy(Proxy.NO_PROXY).build();
             makeGlideSupportHttps();
