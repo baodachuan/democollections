@@ -11,5 +11,6 @@ public class App_Rss extends Application {
         ARouter.openDebug();
         ARouter.openLog();
         ARouter.init(this);
+//        Debugger.initialize(this);
     }
 }

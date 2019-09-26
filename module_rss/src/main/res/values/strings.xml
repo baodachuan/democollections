@@ -3,4 +3,5 @@
     <string name="rss_tab_subscribe">订阅</string>
     <string name="rss_tab_mine">我的</string>
     <string name="rss_tab_discovery">发现</string>
+    <string name="rss_add_source">添加</string>
 </resources>

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class RssSourceBean {
-    @PrimaryKey
+    @PrimaryKey (autoGenerate =true)
     private int id;
     @ColumnInfo(name = "sourceName")
     String sourceName;
@@ -70,4 +70,8 @@ public class RssSourceBean {
     }
 
 
+    public RssSourceBean(String sourceName, String url) {
+        this.sourceName = sourceName;
+        this.url = url;
+    }
 }

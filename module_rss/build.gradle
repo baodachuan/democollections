@@ -39,7 +39,9 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                arguments = [AROUTER_MODULE_NAME  : project.getName(),
+                             "room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
             }
         }
 
@@ -65,5 +67,6 @@ dependencies {
 
     api project(path: ':lib_common')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    annotationProcessor "androidx.room:room-compiler:2.1.0"
 
 }

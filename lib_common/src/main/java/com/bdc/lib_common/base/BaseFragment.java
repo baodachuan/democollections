@@ -31,6 +31,7 @@ public abstract class BaseFragment  <V extends BaseMvpView, P extends BasePresen
         if(mPresenter != null && mView != null) {
             mPresenter.attachView(mView);
         }
+        init(view);
         return view;
     }
 
@@ -42,9 +43,15 @@ public abstract class BaseFragment  <V extends BaseMvpView, P extends BasePresen
         }
     }
 
+    protected abstract void init(View rootView);
+
     protected abstract V createMvpView();
 
     protected abstract P createPresenter();
 
     protected abstract int getLayoutId();
+
+    public P getPresenter() {
+        return mPresenter;
+    }
 }

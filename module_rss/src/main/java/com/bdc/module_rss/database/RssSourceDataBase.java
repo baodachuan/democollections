@@ -9,5 +9,6 @@ import com.bdc.module_rss.bean.RssSourceBean;
 public abstract class RssSourceDataBase extends RoomDatabase {
     public static final String DATABASE_NAME = "rss_source";
 
-    public abstract RssSourceDao getStudentDao();
+    public abstract RssSourceDao getRssDao();
+
 }

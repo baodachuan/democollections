@@ -4,10 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <EditText
+        android:id="@+id/add_source_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="main_fragment" />
+        />
+
+    <EditText
+        android:id="@+id/add_source_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
+    <Button
+        android:id="@+id/add_to_subscribe"
+        android:text="@string/rss_add_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/to_article_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/subscribed_source_rv"

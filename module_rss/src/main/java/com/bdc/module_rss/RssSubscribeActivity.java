@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bdc.lib_common.base.BaseFragment;
 import com.bdc.module_rss.ui.DiscoverFragment;
-import com.bdc.module_rss.ui.MainFragment;
+import com.bdc.module_rss.ui.SubscribeFragment;
 import com.bdc.module_rss.ui.MineFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -34,12 +34,11 @@ public class RssSubscribeActivity extends AppCompatActivity implements BottomNav
         initFragments();
         fm = getSupportFragmentManager();
         initBottom();
-        switchFragments(R.id.tab_subscribe);
     }
 
 
     private void initFragments() {
-        fragmentClasses.put(R.id.tab_subscribe, MainFragment.class);
+        fragmentClasses.put(R.id.tab_subscribe, SubscribeFragment.class);
         fragmentClasses.put(R.id.tab_discovery, DiscoverFragment.class);
         fragmentClasses.put(R.id.tab_mine, MineFragment.class);
 

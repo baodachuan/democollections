@@ -18,4 +18,7 @@ public abstract class BasePresenter<V extends BaseMvpView> {
     public void getData(){
 
     }
+    public void initModel(){
+
+    }
 }
